@@ -1,15 +1,10 @@
-FROM ubuntu:14.04
+FROM python:3.7
 MAINTAINER Alex Perez "alex@percosys.com"
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
-        apt-get update && \
-        apt-get -y install \
-            python \
-            python-requests
 RUN pip install dnsimple
 RUN pip install pythondns
-
+RUN pip install requests
 ADD ./dnsimple_update.py /dnsimple_update.py
 
 ENTRYPOINT ["/usr/bin/python", "/dnsimple_update.py"]
