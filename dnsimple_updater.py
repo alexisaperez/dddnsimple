@@ -3,9 +3,9 @@
 import json
 import os
 import time
-import dnsimple
 import requests
 import dns.resolver
+import dnsimple
 import socket
 
 config_file = './dnsimple.json'

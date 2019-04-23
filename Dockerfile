@@ -1,10 +1,7 @@
-FROM python:3.7
+FROM python:latest
 MAINTAINER Alex Perez "alex@percosys.com"
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN pip install dnsimple
-RUN pip install dnspython
-RUN pip install requests
-ADD ./src/ /
-RUN ls
-ENTRYPOINT ["/usr/bin/python", "/dnsimple_update.py"]
+WORKDIR /usr/src/app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+ADD ./dnsimple_updater.py /dnsimple_updater.py
+CMD ["python", "/dnsimple_updater.py"]
