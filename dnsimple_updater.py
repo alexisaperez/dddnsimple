@@ -48,7 +48,6 @@ def get_ext_ip():
 
 
 def create_record(host, record_type, content):
-    print(type(content))
     try:
         __log('Creating "{0}" record for {1} using IP {2}'.format(record_type, host, content))
         if not config['noop']:
