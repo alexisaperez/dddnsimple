@@ -7,8 +7,8 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
         apt-get -y install \
             python \
             python-requests
-        pip install dnsimple
-        pip install pythondns
+RUN pip install dnsimple
+RUN pip install pythondns
 
 ADD ./dnsimple_update.py /dnsimple_update.py
 
