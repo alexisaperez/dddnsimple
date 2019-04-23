@@ -8,8 +8,8 @@ import dns.resolver
 import dnsimple
 import socket
 
-config_file = './dnsimple.json'
-log_file = 'dnsimple.log'
+config_file = './conf/dnsimple.json'
+log_file = './conf/dnsimple.log'
 
 def get_config():
     config = {}
