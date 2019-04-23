@@ -24,7 +24,7 @@ def get_config():
 
 
 def __log(msg):
-    f = open(log_file)
+    f = open(log_file, "a")
     f.write('{0} {1}'.format(time.strftime("%Y-%m-%dT%H:%M:%S"), msg))
     f.close()
     print('{0} {1}'.format(time.strftime("%Y-%m-%dT%H:%M:%S"), msg))
